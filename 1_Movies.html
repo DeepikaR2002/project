@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>movies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  
+    .box {
+  display: none;
+}
+.vis{
+  display: all;
+}
+  .wrapper { 
+    height: 12%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+  background: linear-gradient(blue,yellow);
+}
+.wrap{
+  color: black;
+}
+.wrap:hover{
+  color:red;
+}
+.dropbtn {
+  background-color: gold;
+  color: black;
+
+  font-size: 16px;
+  border: none;
+  width: 160px;
+  height: 32px;
+
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: gold;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+#myUL{
+  background-color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+footer,header {
+  background: linear-gradient(-45deg, rgb(223, 245, 253), rgb(255, 240, 107), rgb(206, 255, 250), rgb(218, 165, 32));
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 20s ease infinite;
+  -moz-animation: Gradient 20s ease infinite;
+  animation: Gradient 20s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+.logo {
+  width: 80px;
+  height: 50px;
+  float: left;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navigation .links,
+.copyright .links {
+  display: block;
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  text-align: center;
+  margin: 16px 25px 0px 25px;
+  float: left;
+}
+
+.navigation .text {
+  margin: 32px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold
+}
+
+.navigation a.text:hover,
+.copyright a.text:hover {
+  color: #3f3f3f;
+  border-bottom: none;
+  opacity: 0.5;
+}
+
+.navigation a.active,
+.copyright a.active {
+  color: white;
+  font-size: 20px;
+}
+
+header{
+  position: relative;
+  height: 76px;
+}
+
+footer{
+  position: relative;
+  margin-top: 83% !important;
+  height: 76px;
+}
+
+.copyright {
+  position: absolute;
+  padding: 2px 0px 20px 0px;
+  z-index: 2;
+  width: 622px;
+}
+
+.copyright .links {
+  margin-left: 25px;
+}
+
+.copyright .text {
+  margin-top: 28px;
+  color: rgb(63, 63, 63);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.copyright .logo {
+  width: 62px;
+  height: 40px;
+  float: left;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+select{
+  width: 94%;
+  background-color: gold;
+  position: absolute; 
+  margin-left: 45px;
+  margin-top: -38px;
+  color: black;
+  width:165px;
+  height: 30px;
+  padding-left: 50px;
+}
+
+
+</style>
+</head>
+<body>
+
+  <header>
+   <div class="copyright" style="width: 101.2%;margin-left: -8px;">
+    <a class="links" href="project1.html"><img style="width:80px;height:50px;margin-left:40px;margin-top: -4px; border-radius: 6px;" src="https://internship.suvenconsultants.com/projects/365webproject/365epimages/365ep.jpg"></a>
+    <ul style="list-style: none;">
+      <li style="float:left;font-size: 18px;font-family: arial;margin-top: 25px;margin-left: 30px;"><a style="color:black;text-decoration: none;" href="">Movies </a></li>
+      <li style="float:left;font-size: 18px;font-family: arial;margin-top: 25px;margin-left: 30px;"><a style="color:black;text-decoration: none;" href="">TV Series</a></li>
+      <li style="float:left;font-size: 18px;font-family: arial;margin-top: 25px;margin-left: 30px;"><a style="color:black;text-decoration: none;" href="">Audio</a></li>
+    </ul>
+   </div>
+  </header>
+
+  <div class="container" style="width:103.6%;margin-left: -25px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%">
+    
+    <div class="carousel-inner" style="width:100%">
+      <div class="item active" style="width:100%">
+        <img style="width:3000px;height: 402px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/abc1.jpg" alt="Los Angeles">
+      </div>
+
+      <div class="item">
+        <img style="width:101.4%;height: 402px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/abc2.jpg" alt="Chicago" >
+      </div>
+    
+      <div class="item">
+        <img style="width:101.4%;height: 402px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/abc3.jpg" alt="New york">
+      </div>
+
+      <div class="item">
+        <img style="width:101.4%;height: 402px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/abc4.jpg" alt="New york">
+      </div>
+
+      <div class="item">
+        <img style="width:101.4%;height: 402px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/abc5.jpg" alt="New york">
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<br>
+
+
+  <div style="background-color:black;margin-top: -20px;width: 100.7% ">
+    <br>
+     <input id="myInput" onkeyup="myFunction()" style="width: 1000px;height: 33px;background-color: gold;color: black;float: right;margin-right:65px;"
+ type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search Your favourite movie title">
+ <a href=""><img src="https://image.flaticon.com/icons/png/512/151/151773.png" height="20px" width="20px" style="position: absolute; margin-left: 1190px;margin-top: 8px;"></a>
+ <br>
+ <br>
+
+      <select onchange="if(selectedIndex!=0)document.getElementById('less_is_more').innerHTML=options[selectedIndex].value; ">
+
+        <option selected disabled hidden>Genre</option>
+
+       <option value='<ul id="myUL"> <li style="margin-left: 30px;">
+     <img src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano1.jpg">
+
+     <div style="position: absolute;margin-top: -40px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Haider</b></a>
+        <br>
+            Indian crime tragedy film.</center>
+     </div>
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano2.jpg">
+
+     <div style="position: absolute;margin-top: -43px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Dream 2</b></a>
+        <br>
+            Thriller, Mystery & Comedy</center>
+     </div>
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano3.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 32px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Batman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano4.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Monster Manav</b></a>
+        <br>
+            Japanese manga series<br>written by Tsugumi.</center>
+     </div>
+  </li>
+ 
+  <li>
+     <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano5.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Kill Bill</b></a>
+        <br>
+            2003 American martial arts<br>film.</center>
+     </div>
+  </li>
+
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano6.jpg">
+
+     <div style="position: absolute;margin-top: -40px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Rowdy</b></a>
+        <br>
+            Indian action drama film.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano7.jpg">
+
+     <div style="position: absolute;margin-top: -43px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Agnipaath</b></a>
+        <br>
+            Indian crime tragedy film.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano8.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Ankhein</b></a>
+        <br>
+            Thriller, Mystery & Comedy<br>.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano9.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Guide</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano10.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Deewar</b></a>
+        <br>
+            2016 ‧ Fantasy/Science<br>Fiction.</center>
+     </div> 
+  </li>
+
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano11.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Sholay</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano12.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>K3G</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano13.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Shaurya</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano14.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Cheeni Kam</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano15.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Ishq Vishq</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano16.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Padmaavat</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano17.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Kai Po Che</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+  
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano18.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Raabta</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano19.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Interstellar</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano20.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Star Wars</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano21.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Thor</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano22.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Captain America</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano23.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>X-Men</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano24.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Black Window</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano25.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Iron-Man</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano26.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Hulk</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano27.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Captain Marvel</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano28.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Wonder Woman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano29.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Batwoman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano30.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>BatMan</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+<br><br><br><br><br>
+    <footer>
+      <div class="copyright">
+        <a class="links" href="project1.html"><img class="logo" src="https://internship.suvenconsultants.com/projects/365webproject/365epimages/365ep.jpg" alt="365 Entertainment Portal"/></a>
+        <div class="text">Powered by 365 Entertainment Portal 2019. All Rights Reserved.</div>
+      </div>
+
+    </footer>
+
+  <li style="margin-left: 30px;"> 
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano31.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Superman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano32.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Superwomen</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano33.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Doctor Strange</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano34.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Mars</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li> 
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano35.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Gravity</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+
+ 
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano36.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Martian</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+  </ul>
+
+  '>All</option>
+
+
+       <option value='<ul id="myUL" >
+    <li style="margin-left: 80px;">
+      <img src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano1.jpg">
+
+     <div style="position: absolute;margin-top: -40px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Haider</b></a>
+        <br>
+            Indian crime tragedy film.</center>
+     </div>
+    </li>
+<li>
+  <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano2.jpg">
+
+     <div style="position: absolute;margin-top: -43px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Dream 2</b></a>
+        <br>
+            Thriller, Mystery & Comedy</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano3.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Batman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano4.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Monster Manav</b></a>
+        <br>
+            Japanese manga series<br>written by Tsugumi.</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano5.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Kill Bill</b></a>
+        <br>
+            2003 American martial arts<br>film.</center>
+     </div>
+
+</li>
+<li style="margin-left: 80px;">
+  <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano6.jpg">
+
+     <div style="position: absolute;margin-top: -40px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Rowdy</b></a>
+        <br>
+            Indian action drama film.</center>
+     </div>
+  
+</div>
+</li>
+</ul>
+'>Action</option>
+
+
+<option value='<ul id="myUL">
+  <li style="margin-left: 30px;">
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano7.jpg">
+
+     <div style="position: absolute;margin-top: -43px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Agnipaath</b></a>
+        <br>
+            Indian crime tragedy film.</center>
+     </div>
+</li>
+
+<li>
+   <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano8.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Ankhein</b></a>
+        <br>
+            Thriller, Mystery & Comedy<br>.</center>
+     </div>
+</li>
+
+<li>
+    <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano9.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Guide</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano10.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Deewar</b></a>
+        <br>
+            2016 ‧ Fantasy/Science<br>Fiction.</center>
+     </div> 
+</li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano11.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Sholay</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li style="margin-left: 30px;">
+    <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano12.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>K3G</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano13.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Shaurya</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano14.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Cheeni Kam</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano15.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Ishq Vishq</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li>
+
+<li>   
+   <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano16.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Padmaavat</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+</li>
+
+<li style="margin-left: 30px;">
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano17.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Kai Po Che</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+</li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano18.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Raabta</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+</li> '>Drama</option>
+
+<option value='<ul id="myUL">
+  <li style="margin-left: 30px;">
+    <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano19.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Interstellar</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+    </li>
+
+<li>
+  <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano20.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Star Wars</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+</li>
+
+<li>
+    <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano21.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Thor</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+</li>
+
+<li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano22.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Captain America</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+<li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano23.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>X-Men</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+ <li style="margin-left: 30px;">
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano24.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Black Window</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+<li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano25.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Iron-Man</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano26.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Hulk</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+   <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano27.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Captain Marvel</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+   <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano28.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Wonder Woman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li style="margin-left: 30px;">
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano29.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Batwoman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+  <li>
+     <img style="margin-left: 30px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano3.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 32px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Batman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+
+ <li style="margin-left: 30px;"> 
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano31.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Superman</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+<li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano32.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Superwomen</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+ <li>
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano33.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Doctor Strange</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+<li style="margin-left: 30px;">
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano34.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Mars</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div> 
+  </li>
+
+ <li> 
+     <img style="margin-left: 30px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano35.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 30px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Gravity</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+
+ <li style="margin-left: 30px;">
+     <img style="margin-left: 0px;margin-top: 10px;" src="https://internship.suvenconsultants.com/projects/365webproject/365mov/nano36.jpg">
+
+     <div style="position: absolute;margin-top: -62px;margin-left: 0px;background-color: rgba(0, 0, 0, 0.5);width:200px;font-family: "Montserrat", sans-serif;color: white;">
+        <center><a href="#" style="color: white;text-decoration: none;"><b>Martian</b></a>
+        <br>
+            A Marvel Comics superhero<br>team.</center>
+     </div>
+  </li>
+'>Sci-fi</option>
+</select>
+
+
+<div id="less_is_more"></div>
+
+
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+
+<script>
+document
+  .getElementById('target')
+  .addEventListener('change', function () {
+    'use strict';
+    var vis = document.querySelector('.vis'),   
+      target = document.getElementById(this.value);
+    if (vis !== null) {
+      vis.className = 'box';
+    }
+    if (target !== null ) {
+      target.className = 'vis';
+    }
+});
+</script>
+
+</body>
+</html
